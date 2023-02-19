@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.css')}}">
+    <title>Read(ONE)</title>
+</head>
+<body>
+    <div class="container">
+        <a style="margin-left: 1000px; font-size: 20px;" href="/">Home</a>
+        <p style="text-decoration: underline; font-size: 25px;">User #{{person.id}}</p>
+        <div class="userInfoContainer">
+            <h1>User Info:</h1>
+            <div class="userInfo">
+                <p>Full Name: {{person.first_name}} {{person.last_name}}</p>
+                <p>Email: {{person.email}}</p>
+                <p>Last Updated On: {{person.updated_at}}</p>
+            </div>
+            <span><a href="/edit-user/{{person.id}}">edit</a> | <a href="/delete/{{person.id}}">delete</a></span>
+        </div>
+
+
+    </div>
+</body>
+</html>

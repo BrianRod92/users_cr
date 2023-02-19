@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.css')}}">
+    <title>Create</title>
+</head>
+
+<body>
+    <div class="container">
+        <a style="margin-left: 1000px; font-size: 20px;" href="/">Home</a>
+        <h1>Add User</h1>
+        <br>
+        <form action="/create-user" method="POST">
+            <div class="mb-3">
+                <label for="firstNameInput" class="inputLabel">First Name:</label>
+                <input name="first_name" type="text" class="form-control" id="firstNameInput" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="lastNameInput" class="inputLabel">Last Name:</label>
+                <input name="last_name" type="text" class="form-control" id="lastNameInput" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="emailInput" class="inputLabel">Email:</label>
+                <input name="email" type="text" class="form-control" id="emailInput" placeholder="">
+            </div>
+            <div class="submitForm">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

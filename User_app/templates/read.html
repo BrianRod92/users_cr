@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.css')}}">
+    <title>Read(All)</title>
+</head>
+<body>
+    <div class="container">
+        <p>Admin View...</p>
+        <h1>Our users list!</h1>
+        <br>
+        <div class="admin_Table">
+            <table class="info_Table">
+                
+                <thead class="table_Top">
+                    <tr class="thead">
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr class="tbody">
+                        <td>{{user.first_name}}</td>
+                        <td>{{user.last_name}}</td>
+                        <td>{{user.email}}</td>
+                        <td><a href="/readone/{{user.id}}">show</a></td>
+                        <td><a href="/edit-user/{{user.id}}">edit</a></td>
+                        <td><a href="/delete/{{user.id}}">delete</a></td>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <br>
+            <a href="/users/new"><button style="margin-left: 5px;" type="text" class="btn btn-primary">Create A New User</button></a>
+        </div>
+    </div>
+</body>
+</html>
